@@ -1,0 +1,4 @@
+spring:
+  redis:
+    host: localhost # Standalone Redis 호스트
+    port: 6379 # Standalone Redis 포트
