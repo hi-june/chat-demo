@@ -1,4 +1,10 @@
 spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: foo # boo
+    template:
+      default-topic: chatroom
   redis:
     host: localhost
     port: 6379

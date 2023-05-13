@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    bootstrap-servers: # server url
+    consumer:
+      properties:
+        spring.json.trusted.packages: # trusted package
+      group-id: # group id name
+    template:
+      default-topic: # default-topic name
+  redis:
+    host: # host name
+    port: # port number
