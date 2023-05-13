@@ -2,16 +2,16 @@ package com.june.chatdemo.domain.chat.controller;
 
 import com.june.chatdemo.domain.chat.model.ChatMessage;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.listener.ChannelTopic;
+import org.apache.kafka.clients.admin.NewTopic;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 
 @RequiredArgsConstructor
 @Controller
 public class ChatMessageController {
-    private final RedisTemplate<String, Object> redisTemplate;
-    private final ChannelTopic channelTopic;
+    private final KafkaTemplate<String, ChatMessage> kafkaTemplate;
+    private final NewTopic topic;
 
     @MessageMapping("/chat/message")
     public void message(ChatMessage chatMessage) {
@@ -19,6 +19,6 @@ public class ChatMessageController {
             chatMessage.setMessage(chatMessage.getSender() + "님 등장!");
         }
 
-        redisTemplate.convertAndSend(channelTopic.getTopic(), chatMessage);
+        kafkaTemplate.send(topic.name(), chatMessage);
     }
 }
