@@ -18,8 +18,13 @@ repositories {
 	mavenCentral()
 }
 
+bootJar {	// 서버 인스턴스 별로 각기 다른 group id를 부여하기 위해 임시로 설정
+	archiveFileName = "chatdemo-foo.jar"	// server 1
+	// archiveFileName = "chatdemo-boo.jar"	// server 2
+}
+
 dependencies {
-	// redis(채팅 저장용)
+	// redis(채팅방 저장용)
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 	// spring web
@@ -30,9 +35,6 @@ dependencies {
 
 	// kafka(pub/sub 구현용)
 	implementation 'org.springframework.kafka:spring-kafka'
-
-	// embedded redis
-	implementation 'it.ozimov:embedded-redis:0.7.2'
 
 	// dev tools
 	implementation 'org.springframework.boot:spring-boot-devtools'
