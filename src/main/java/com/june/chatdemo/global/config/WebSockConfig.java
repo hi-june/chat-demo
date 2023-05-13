@@ -9,6 +9,8 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSockConfig implements WebSocketMessageBrokerConfigurer {
+    private static final String WEB_SOCKET_HOST = "http://localhost:*";
+
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/sub");  // 메시지 구독 요청 prefix
@@ -18,6 +20,6 @@ public class WebSockConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         // stomp websocket endpoint 설정( ws://localhost:8080/ws-stomp )
-        registry.addEndpoint("/ws-stomp").setAllowedOriginPatterns("http://localhost:*").withSockJS();
+        registry.addEndpoint("/ws-stomp").setAllowedOriginPatterns(WEB_SOCKET_HOST).withSockJS();
     }
 }
