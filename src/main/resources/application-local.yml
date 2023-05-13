@@ -2,7 +2,8 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-      group-id: foo # boo
+      group-id: foo # server 1
+      # group-id: boo # server 2
     template:
       default-topic: chatroom
   redis:
