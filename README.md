@@ -10,7 +10,7 @@ SWU: Share With Us(new version of 혼자왔니)
    총 2번 빌드해줘야합니다.  
    build.gradle과 application-local.yml 파일을 각각 수정하여 server_1용, server_2용 빌드 파일을 각각 만들어줍니다.
    1) build.gradle 파일
-      ```
+      ```groovy
       bootJar {   // archiveFileName은 생성될 build 파일의 이름입니다.  
       archiveFileName = "chatdemo-foo.jar"	// server 1
       // archiveFileName = "chatdemo-boo.jar"	// server 2
