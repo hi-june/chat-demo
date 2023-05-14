@@ -70,4 +70,4 @@ SWU: Share With Us(new version of 혼자왔니)
 1. 채팅방 개설
 <img src="https://user-images.githubusercontent.com/98803599/235394414-2bc44f2c-8a53-4ea7-85b9-6d586e565553.png">
 2. 채팅
-<img src="https://user-images.githubusercontent.com/98803599/235394540-d07e2fcb-76c0-4e23-8303-03c7a0e728f9.png">
+![chat](https://github.com/hi-june/chat-demo/assets/98803599/2eccf576-ff99-40d5-9ed3-bb3914a2cc02)
